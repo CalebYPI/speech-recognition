@@ -2,7 +2,6 @@ import speech_recognition
 import datetime
 
 recognizer = speech_recognition.Recognizer()
-now = datetime.datetime.now()
 while True:
     try:
         with speech_recognition.Microphone() as mic:
@@ -15,7 +14,7 @@ while True:
             print(f"Recognized {text}")
 
             f = open("out.txt", "a")
-            f.write(now.strftime +" "+ text + "\n")
+            f.write(text + "\n")
 
             if text == "stop":
                 exit()
